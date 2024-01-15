@@ -85,8 +85,7 @@ def create_agent_chain():
     }
     memory = ConversationBufferMemory(memory_key="memory", return_messages=True)
 
-    # tools = load_tools(["ddg-search", "wikipedia"])
-    tools = load_tools(["wikipedia"])
+    tools = load_tools(["ddg-search", "wikipedia"])
     return initialize_agent(tools, chat, agent=AgentType.OPENAI_FUNCTIONS, agent_kwargs=agent_kwargs, memory=memory)
 
 
